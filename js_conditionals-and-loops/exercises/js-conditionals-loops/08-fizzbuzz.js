@@ -14,8 +14,26 @@
 // The modulo operator n % k gives the remainder; it is 0 when k divides n.
 
 function fizzBuzz(n) {
-  // TODO: replace this with your implementation
+  const word = [];
+
+  for (let i = 1; i <= n; i++) {
+    // เช็คว่าหารลงตัวทั้ง 3 และ 5 ก่อน
+    if (i % 3 === 0 && i % 5 === 0) {
+    word.push("FizzBuzz");
+    } // เช็คว่าหาร 3 ลงตัวอย่างเดียว
+    else if (i % 3 === 0) {
+      word.push("Fizz");
+    } // เช็คว่าหาร 5 ลงตัวอย่างเดียว
+    else if (i % 5 === 0) {
+      word.push("Buzz");
+    } // ถ้าไม่เข้าเงื่อนไขใดเลย ให้ใส่ตัวเลขนั้นลงไป
+    else {
+      word.push(i);
+    }
+  }
+  return word;
 }
+
 
 // --- Tests (do not edit) ---
 import { deepStrictEqual } from "node:assert";
@@ -27,3 +45,4 @@ deepStrictEqual(fizzBuzz(3), [1, 2, "Fizz"]);
 deepStrictEqual(fizzBuzz(0), []);
 
 console.log("All tests passed ✅");
+
