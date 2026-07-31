@@ -8,7 +8,21 @@
 // case labels with no break between them (fall-through).
 
 function dayType(dayNumber) {
-  // TODO: replace this with your implementation
+  switch (dayNumber) {
+    case 0:
+    case 6:
+      return "weekend";
+    
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      return "weekday";
+    
+    default:
+      return "invalid";
+  }
 }
 
 // --- Tests (do not edit) ---
