@@ -11,8 +11,23 @@
 // count how many times you can do that before reaching 0.
 
 function countDigits(n) {
-  // TODO: replace this with your implementation
-}
+  // แปลงค่าให้เป็นค่าสัมบูรณ์ (Absolute) เพื่อตัดเครื่องหมายลบทิ้ง
+  n = Math.abs(n);
+  // จัดการกรณีพิเศษ: ถ้าตัวเลขคือ 0 ให้นับเป็น 1 หลัก (ตามที่โจทย์ระบุ)
+  if (n === 0) {
+    return 1;
+  }
+  // สร้างตัวแปรสำหรับ "นับจำนวนหลัก" เริ่มต้นที่ 0
+  let count = 0;
+  // วนลูปตราบใดที่ n ยังมีค่ามากกว่า 0
+  while (n > 0) {
+    count++;
+    n = Math.floor(n / 10);
+  }
+  // ส่งค่าจำนวนหลักที่นับได้กลับไป
+  return count;
+  }
+
 
 // --- Tests (do not edit) ---
 import { strictEqual } from "node:assert";
