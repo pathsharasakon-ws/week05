@@ -14,7 +14,29 @@
 // Use one loop for the rows and a nested loop (or repetition) for the columns.
 
 function rectangle(width, height) {
-  // TODO: replace this with your implementation
+  // 1. เช็คเงื่อนไข ถ้ากว้างหรือสูงน้อยกว่า 1 ให้คืนค่า String ว่างๆ ทันที
+  if (width < 1 || height < 1) {
+    return "";
+  }
+
+  let result = "";
+
+  // 2. ลูปชั้นนอก ควบคุมจำนวน "แถว" (height)
+  for (let i = 0; i < height; i++) {
+    
+    // 3. ลูปชั้นใน ควบคุมการต่อตัวอักษร "*" ในแต่ละแถว (width)
+    for (let j = 0; j < width; j++) {
+      result += "*";
+    }
+    
+    // 4. เมื่อจบ 1 แถว ให้ขึ้นบรรทัดใหม่ด้วย "\n" 
+    // แต่มีข้อแม้ว่า "ต้องไม่ใช่บรรทัดสุดท้าย" เพื่อไม่ให้มี \n เกินมาตอนจบ
+    if (i < height - 1) {
+      result += "\n";
+    }
+  }
+
+  return result;
 }
 
 // --- Tests (do not edit) ---
