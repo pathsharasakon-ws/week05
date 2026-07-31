@@ -8,7 +8,15 @@
 // array or string of vowels plus .includes(char) makes the check easy.
 
 function countVowels(word) {
-  // TODO: replace this with your implementation
+  const vowels = "aeiou";
+  let count = 0;
+
+  for (const char of word) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
 }
 
 // --- Tests (do not edit) ---
