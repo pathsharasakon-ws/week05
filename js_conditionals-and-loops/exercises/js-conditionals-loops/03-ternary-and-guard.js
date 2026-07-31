@@ -11,7 +11,11 @@
 //      a / b. Express this decision as a single ternary expression.
 
 function safeDivide(a, b) {
-  // TODO: replace this with your implementation
+  if(typeof a !== 'number' || typeof b !== 'number') {
+    return "invalid input";
+  }
+
+  return b === 0 ? "cannot divide by zero" : a / b;
 }
 
 // --- Tests (do not edit) ---
